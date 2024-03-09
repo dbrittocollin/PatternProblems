@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         //verticalZigZag(12);
-        hour(3);
+        hollowDiamondPyramid(6);
     }
 
     public static void ReverseRightPyramid(int number) {
@@ -286,6 +286,26 @@ public class Main {
         }
 
 
+    }
+    public static void hollowDiamondPyramid(int number){
+        for(int row=1;row<=number;row++){
+            for(int col=1; col<=number-row;col++){
+                System.out.print(" ");
+            }
+            for(int star=1;star<=row;star++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for(int row=1;row<=number;row++){
+            for(int col=1; col<=row;col++){
+                System.out.print(" ");
+            }
+            for(int star=1;star<=number-row;star++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 }
 
