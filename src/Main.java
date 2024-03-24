@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         //verticalZigZag(12);
-        hollowDiamondPyramid(6);
+        //hollowDiamondPyramid(6);
+        hourglass09(9);
     }
 
     public static void ReverseRightPyramid(int number) {
@@ -303,6 +304,72 @@ public class Main {
             }
             for(int star=1;star<=number-row;star++){
                 System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void hourglass09(int number){
+        int counter=9;
+        int totalElements=0;
+        int dummyNumber=number;
+        for(int i=number;i>=0;i--){
+            totalElements+=dummyNumber;
+            dummyNumber--;
+        }
+        totalElements=(2*totalElements)-1;
+
+        int print=1;
+        for(int row=1;row<=number;row++){
+            int col;
+            for (col=1;col<=row;col++){
+                System.out.print(" ");
+
+            }
+            for(int pattern=number;pattern>=row;pattern--){
+
+                if(print>9){
+                    if(print%2==0){
+                        System.out.print(" 0");
+                        print++;
+
+
+                    }else {
+                        System.out.print(" 9");
+                        print++;
+                    }
+
+                }else{
+                    System.out.print( " "+print);
+                    print++;
+                }
+            }
+            System.out.println();
+        }
+        for(int row=1;row<=number-1;row++){
+            int col;
+            for (col=1;col<=number-row;col++){
+                System.out.print(" ");
+
+            }
+            for(int pattern=1;pattern<=row+1;pattern++){
+
+                if(print<=totalElements-9){
+                    if(print%2==0){
+                        System.out.print(" 0");
+                        print++;
+
+
+                    }else {
+                        System.out.print(" 9");
+                        print++;
+                    }
+
+                }else{
+
+                    System.out.print( " "+counter);
+                    counter--;
+                }
             }
             System.out.println();
         }
